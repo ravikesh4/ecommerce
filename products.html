@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
-
+<link rel="stylesheet" href="css/nouislider.min.css" />
     <title>Products</title>
   </head>
   <body>
@@ -111,23 +111,14 @@
                                                 </label>
                                             </div>
                                             <label for="" class="mt-2">Price</label>
-                                            <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="exampleRadios" id="nonlinear" value="option1" checked>
-                                                    <label class="form-check-label" for="exampleRadios1">
-                                                      0-10000
-                                                    </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option1" checked>
-                                                <label class="form-check-label" for="exampleRadios2">
-                                                    10000-15000
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option1" checked>
-                                                <label class="form-check-label" for="exampleRadios3">
-                                                    15000-20000
-                                                </label>
+                                            <div id="nonlinear"></div>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <output id="price-min">0</output>
+                                                </div>
+                                                <div class="col-6 text-right">
+                                                        <output id="price-max">1000</output>
+                                                    </div>
                                             </div>
                                             <label for="" class="mt-2">Ratings</label>
                                             <div class="form-check">
@@ -209,30 +200,29 @@
         
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script>
-        
-
-        var nonLinearSlider = document.getElementById('nonlinear');
-
-        noUiSlider.create(nonLinearSlider, {
-            connect: true,
-            behaviour: 'tap',
-            start: [500, 4000],
-            range: {
-                // Starting at 500, step the value by 500,
-                // until 4000 is reached. From there, step by 1000.
-                'min': [0],
-                '10%': [500, 500],
-                '50%': [4000, 1000],
-                'max': [10000]
-            }
-        });
-
-
-    </script>
+    
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+
+    <script src="js/nouislider.min.js"></script>
+    <script>
+            var nonLinearSlider = document.getElementById('nonlinear');
+            noUiSlider.create(nonLinearSlider, {
+                connect: true,
+                behaviour: 'tap',
+                start: [0, 4000],
+                range: {
+                    'min': [0],
+                    'max': [4000]
+                }
+            });
+
+            nonLinearSlider.noUiSlider.on('update', function (values, handle) {
+    document.getElementById('price-min').innerHTML = values[0];
+    document.getElementById('price-max').innerHTML = values[1];
+});
+        </script>
+</body>
 </html>

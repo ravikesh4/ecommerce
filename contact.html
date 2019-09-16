@@ -14,12 +14,34 @@
   </head>
   <body>
     <!-- nav bar -->
+    <section style="background-color: rgb(32, 233, 233)">
+            <div class="navbar navbar-expand-lg">
+                <div class="container header-menu">
+                    <div class="logo">
+                        <img src="images/logo.jpg" alt="Company Logo" width="80" height="80">
+                    </div>
+                    <div class="search">
+                        <div class="input-group">
+                            <input type="text" class="form-control col-md-9" placeholder="Search Products...">
+                            <div class="input-group-append">
+                                <button style="line-height: 20px" class='fa fa-search input-group-text'></button>
+                            </div>
+                                                        
+                        </div>
+                    </div>
+                    <div class="cart">
+                            <p><span class="" ><a href=""  data-toggle="modal" data-target="#login"> Login/Register </a> |</span><i class="fa fa-shopping-cart fa-3x"></i></p>
+                    </div>
+                </div>
+            </div>
+        </section>
     <div class="sticky-top">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">E-commerce</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+                <span><img src="images/icons/bar-chart-outline.svg" style="width: 24px;height:24px;transform:rotate(90deg);" aria-hidden="true" /></span>
         </button>
+        <a class="navbar-brand" href="#">E-commerce</a>
+        
 
         <div class="collapse navbar-collapse navbar-right" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
@@ -110,6 +132,93 @@
         
         <!-- contact section end  -->
 
+
+        
+
+<!-- Modal -->
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+                  <div class="modal-header">
+                      <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                          <li class="nav-item">
+                              <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Login</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Register</a>
+                          </li>
+                          <button type="button" class="close float-right" data-dismiss="modal" aria-label="Close">
+                              <p  class="pl-5"><span aria-hidden="true">&times;</span></p>
+                          </button>
+                      </ul>
+                  </div>
+             
+              <div class="tab-content" id="pills-tabContent">
+                  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                      <br>    
+                      <form>
+                                  <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                                    <div class="col-sm-10">
+                                      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
+                                    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                                    <div class="col-sm-10">
+                                      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
+                                    <div class="offset-sm-5 col-sm-5">
+                                      <button type="submit" class="btn btn-primary">Sign in</button>
+                                    </div>
+                                  </div>
+                          </form>
+                  </div>
+                  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                      <br>
+                      <form>
+                                  <div class="form-group row">
+                                    <label for="inputName3" class="col-sm-2 col-form-label">Name</label>
+                                    <div class="col-sm-10">
+                                      <input type="text" class="form-control" id="inputName3" placeholder="Full Name">
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                                    <div class="col-sm-10">
+                                      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
+                                    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                                    <div class="col-sm-10">
+                                      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
+                                    <label for="inputMobile3" class="col-sm-2 col-form-label">Mobile</label>
+                                    <div class="col-sm-10">
+                                      <input type="text" class="form-control" id="inputMobile3" placeholder="Mobile Number">
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
+                                    <div class="offset-sm-5 col-sm-5">
+                                      <button type="submit" class="btn btn-primary">Sign in</button>
+                                    </div>
+                                  </div>
+                      </form>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     
